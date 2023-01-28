@@ -1,105 +1,132 @@
 /* Import Styles */
 @import url(./font.css);
 @import url(./colors.css);
-
 /* Reset Styles */
 * {
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans Georgian', sans-serif;
+    box-sizing: border-box;
 }
 /* Header Styles */
 header {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%),url(../assets/img/Hitler.jpg);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%),url(../assets/img/Hitler-background.jpg);
     background-size: cover;
-    background-position: center;
-}
-.inner_header {
-    width: 85%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 35px 0;
-}
-
-.inner_header ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 30px;
-    position: relative;
-}
-
-.inner_header ul li a {
-    text-decoration: none;
-    color: var(--white);
-    font-size: 20px;
-}
-
-.inner_header ul li::after {
-    content: '';
-    height: 3px;
-    width: 0;
-    background: var(--light-red);
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
-}
-
-.inner_header ul li:hover::after {
-    width: 100%;
-}
-
-.content {
-    width: 100%;
-    top: 50%;
-    position: absolute;
-    transform: translateY(-50%);
-    text-align: center;
-}
-
-.content h1 {
-    font-size: 50px;
-    transform: inherit;
-}
-
-.content p {
-    font-size: 20px;
-}
-
-.content h1, p {
-    color: var(--white);
-}
-
-.btn{
-    text-align: center;
-    margin-top: 20px;
-    width: 200px;
-    height: 40px;
-    background: transparent;
-    color: var(--white);
-    border-radius: 25px;
-    border: 2px solid var(--brown);
+    background-position: center;    
     position: relative;
     overflow: hidden;
 }
-
-.btn span {
-    content: '';
-    width: 0;
-    height: 100%;
-    background: var(--brown);
-    border-radius: 25px;
+.top-nav {
+	width: 70%;
+	height: 15%;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    border-bottom: 3px solid var(--gray);
+}
+.hitler-logo {
+    width: 60px;
+    cursor: pointer;
+}
+.top-nav button {
+	width: 120px;
+	height: 40px;
+    margin: 0px 5px;
+	background-color: var(--creamcolor);
+	color: var(--blue);
+	border: 1px solid var(--gray);
+	outline: none;
+    border-radius: 20px;
+	cursor: pointer;
+}
+/* Side Nav */
+.side-nav {
+    display: block;
+	width: 100px;
+	height: 100vh;
+	background: linear-gradient(var(--creamcolor), var(--creamcolor));
+	position: absolute;
+	top: 0;
+	right: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.soc-links {
+    width: 50px;
     position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: 0.5s;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.useful-links {
+    width: 50px;
+    position: absolute;
+    bottom: 30px;
+    cursor: pointer;
+}
+/* Content Styles */
+.content {
+    position: absolute;
+    top: 20%;
+    left: 55%;
+}
+.inner-content {
+    flex-basis: 50%;
+    display: flex;
+}
+.inner-content .column1 h1 {
+    font-size: 50px;
+    color: var(--blue);
+    position: absolute;
+    top: 35%;
+    right: 130%;
+    box-shadow: 0px 3px 3px 5px var(--gray);
+    text-align: center;
+    background-color: var(--creamcolor);
+    border-radius: 20px;
+}
+.inner-content .column2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 20px;
+}
+.inner-content .column2 .card {
+    width: 200px;
+    height: 230px;
+    border-radius: 20px;
+    border: 2px solid var(--skyblue);
+    box-shadow: 0px 3px 3px 5px var(--gray);
+    cursor: pointer;
+    transition: transform 0.5s;
+    padding: 5px 0;
+    background-size: cover;
+    background-position: center;
 }
 
-.btn:hover span {
-    width: 100%;
+.inner-content .column2 .card h5 {
+    font: 12px;
+    text-align: center;
+    color: var(--blue);
+    background-color: var(--creamcolor);
+    border-radius: 30px;
+}
+
+.inner-content .column2 .card:hover {
+    transform: translateY(-10px);
+}
+
+.inner-content .column2 .card1 {
+    background-image: url(../assets/img/childhood-education.jpg);
+}
+.inner-content .column2 .card2 {
+    background-image: url(../assets/img/economic-culture.jpg);
+}
+.inner-content .column2 .card3 {
+    background-image: url(../assets/img/Appointment\ as\ Chancellor.jpg);
+}
+.inner-content .column2 .card4 {
+    background-image: url(../assets/img/WW1-hitler.jpg);
 }
